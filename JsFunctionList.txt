@@ -9,6 +9,7 @@ GameEngine.js
 
 				 function start(){
 				 functions present in GameParameter.js
+				 functions will be called to display the various cells. The Matrix variable has the tiles* Use Matrix[get1D(i,j)] to get i row and jth
 <script src="js/GameFramesAndPages.js"></script>
 GameFramesAndPages.js
 
@@ -30,13 +31,13 @@ Helper.js
 ParameterFunctions.js
 
 				 function setParameters(){
+				 function setImages(){
 <script src="js/RandomNumber.js"></script>
 RandomNumber.js
 
 				 functions to generate numbers randomly.
 				 function get_random_num(){
 				 function getRandomTrueMatrix(size_of_matrix){
-				 function and written in Tiles.js
 <script src="js/Tiles.js"></script>
 Tiles.js
 
@@ -50,13 +51,14 @@ Tiles.js
 				 function setEnumColor() {
 				 function Coordinates(x,y){
 				 function(){/*some logic to get the x-coordinate in pixels*/};
-				 function(){/*some logic to get the x-coordinate in pixels*/};
+				 function(){/*some logic to get the y-coordinate in pixels*/};
 				 function(other){
 				 function Tiles(value,coord){
 				 function(color){
 				 function(new_value){
 				 function(other){
 				 function(other){
+				 function sets the matrix to a random legal value*/
 				 function setMatrix(size_of_matrix){
 <script src="js/animation.js"></script>
 animation.js
