@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+		This page gets displayed after the game loads.
+		This page initially contains the page options. 
+		These include the size of matrix in the game and other information.
+-->
+<html>
+    <head>
+        <title>GameOfDenomination</title>
+        <link rel="stylesheet" type="text/css" href="css/cssIndex.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/GameAnimations.js"></script>
+		<script src="js/GameEngine.js"></script>
+		<script src="js/GameFramesAndPages.js"></script>
+		<script src="js/GameParameters.js"></script>
+		<script src="js/Helper.js"></script>
+		<script src="js/ParameterFunctions.js"></script>
+		<script src="js/RandomNumber.js"></script>
+		<script src="js/Tiles.js"></script>
+		<script src="js/animation.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+
+
+
+
+    </head>
+    <body onload="setFrame('#gameFrame')">
+        <div id="gameFrame">
+        <div id="welcomeText">
+		</div>
+        <div id="level">
+				<br><br>
+				Select The Game Level:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="radio" name="level" value="LEVEL1" checked="checked" />&nbsp;Level 1<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   <input type="radio" name="level" value="LEVEL2" />&nbsp;Level 2<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   <input type="radio" name="level" value="LEVEL3"  />&nbsp;Level 3<br>
+			   <br>
+               Select Size Of Matrix:<br>
+			   &nbsp;&nbsp;
+               <input type="radio" name="numOfCoins" value="FIRST" />4 &nbsp;
+               <input type="radio" name="numOfCoins" checked="checked" value="SECOND" />6 &nbsp;
+               <input type="radio" name="numOfCoins" value="THIRD" />10 &nbsp;<br>
+               <br>
+			   Select The Game Mode:<br>
+			   &nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="radio" name="playerOption" value="TWO_PLAYER" />Two Player<br>
+			   &nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="radio" checked="checked" name="playerOption" value="SINGLE_PLAYER" checked="checked" />Against Computer<br>
+               <br>
+			   <button class='btn' id="RulesBtn" autofocus="" name="Rules" onclick="setRules('gameFrame')"><img src='images/RulesBtn.jpg' /> </button>
+			   <button class='btn' id="PlayBtn" autofocus="" name="Play" onclick="start()"><img src='images/PlayBtn.jpg' /></button>
+			   <button class='btn' id="AboutBtn" autofocus="" name="About" onclick="setAbout('gameFrame')"><img src='images/AboutBtn.jpg' /> </button>
+        </div>
+        </div>
+    </body>
+</html>

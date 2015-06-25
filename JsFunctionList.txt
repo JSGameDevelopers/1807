@@ -1,0 +1,68 @@
+<script src="js/GameAnimations.js"></script>
+GameAnimations.js
+
+				 function repeatOften() {
+				 function throtle(){
+				 function LoadGame(){
+<script src="js/GameEngine.js"></script>
+GameEngine.js
+
+				 function start(){
+				 functions present in GameParameter.js
+<script src="js/GameFramesAndPages.js"></script>
+GameFramesAndPages.js
+
+				 function loadPage(pageName){
+				 function setRules(frameName){
+				 function setAbout(frameName){
+				 function setFrame(frameName){
+<script src="js/GameParameters.js"></script>
+GameParameters.js
+
+				 function setParametes
+<script src="js/Helper.js"></script>
+Helper.js
+
+				 functions*/
+				 function generates the row major of the Given Two D array it helps in converting 1D to 2D
+				 function get1D(x,y){
+<script src="js/ParameterFunctions.js"></script>
+ParameterFunctions.js
+
+				 function setParameters(){
+<script src="js/RandomNumber.js"></script>
+RandomNumber.js
+
+				 functions to generate numbers randomly.
+				 function get_random_num(){
+				 function getRandomTrueMatrix(size_of_matrix){
+				 function and written in Tiles.js
+<script src="js/Tiles.js"></script>
+Tiles.js
+
+				 function Color() {
+				 function () {this.BLUE = true; this.RED = false; this.GREEN = false; };
+				 function () {this.BLUE = false; this.RED = true; this.GREEN = false; };
+				 function () {this.BLUE = false; this.RED = false; this.GREEN = true; };
+				 function () {this.BLUE = false; this.RED = false; this.GREEN = false; };
+				 function (other) {if (this.BLUE === other.BLUE && this.RED === other.RED && this.GREEN === other.GREEN) {return true; } else {return false; } };
+				 function 
+				 function setEnumColor() {
+				 function Coordinates(x,y){
+				 function(){/*some logic to get the x-coordinate in pixels*/};
+				 function(){/*some logic to get the x-coordinate in pixels*/};
+				 function(other){
+				 function Tiles(value,coord){
+				 function(color){
+				 function(new_value){
+				 function(other){
+				 function(other){
+				 function setMatrix(size_of_matrix){
+<script src="js/animation.js"></script>
+animation.js
+
+				 function() {
+				 function(callback, element) {
+				 function() { callback(currTime + timeToCall); },
+				 function(id) {
+<script src="js/jquery-1.11.1.min.js"></script>
