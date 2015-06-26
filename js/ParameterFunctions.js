@@ -2,14 +2,15 @@ function setParameters(){
     LEVEL=$('input[name=level]:checked', '#level').val();
     GAME_TYPE=$('input[name=playerOption]:checked', '#level').val();
     var sizeOfMatrix=$('input[name=numOfCoins]:checked','#level').val();
-    if(sizeOfMatrix === "FIRST"){
+	console.log("sizeOfMatrix = "+sizeOfMatrix);
+    if(sizeOfMatrix === 'FIRST'){
         MATRIX_SIZE = 4;
     }
-    else if(sizeOfMatrix === "SECOND"){
+    else if(sizeOfMatrix === 'SECOND'){
         MATRIX_SIZE = 6;
     }
     else
-        MAXTRIX_SIZE = 10;
+        MATRIX_SIZE = 10;
 	console.log("Level set to "+LEVEL);
 	console.log("Game type set to "+GAME_TYPE);
 	console.log("Matrix size set to "+MATRIX_SIZE);
