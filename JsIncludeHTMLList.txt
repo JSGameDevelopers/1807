@@ -1,8 +1,10 @@
+<script src="js/DisplayTiles.js"></script>
 <script src="js/GameAnimations.js"></script>
 <script src="js/GameEngine.js"></script>
 <script src="js/GameFramesAndPages.js"></script>
 <script src="js/GameParameters.js"></script>
 <script src="js/Helper.js"></script>
+<script src="js/InsertTiles.js"></script>
 <script src="js/ParameterFunctions.js"></script>
 <script src="js/RandomNumber.js"></script>
 <script src="js/Tiles.js"></script>

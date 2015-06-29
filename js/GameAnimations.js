@@ -26,6 +26,6 @@ function throtle(){
     }
 }
 function LoadGame(){
-    setFrame("#GameFrameLoadPage");
+    setFrame("#gameFrameLoadPage");
     repeatOften();
 }

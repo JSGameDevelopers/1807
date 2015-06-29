@@ -1,8 +1,10 @@
+DisplayTiles.js
 GameAnimations.js
 GameEngine.js
 GameFramesAndPages.js
 GameParameters.js
 Helper.js
+InsertTiles.js
 ParameterFunctions.js
 RandomNumber.js
 Tiles.js
