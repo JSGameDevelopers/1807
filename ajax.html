@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<span id="container"></span>
+<input type="button" id="btn" value="Click me!">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn").click(function(event){
+			$.ajax({
+				url : "ajax.php",
+				type : 'post',
+				data : {
+					'name' : 'garima',
+					'ph_no' : '11111111111'
+				},
+				dataType : 'json',
+				success : function(data){
+					console.log(data);
+					$("#container").text(data.name + " has a phone with number " + data.phone);
+				},
+				error : function(xhr, status, error){
+
+				}
+			})
+		})
+		
+	})
+</script>
+</body>
+</html>

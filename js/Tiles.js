@@ -37,18 +37,20 @@ function setEnumColor() {
 /*
 	This class has the two dimensional address of the tile in the matrix.
 */
-function Coordinates(x,y){
+function Coordinates(x,y,leftCoord,topCoord){
 	
 	this.x = x;
 	this.y = y;
-	this.get_x_pixel = function(){/*some logic to get the x-coordinate in pixels*/};
-	this.get_y_pixel = function(){/*some logic to get the y-coordinate in pixels*/};
-	/*Is set null initially need to be assigned before we could place the tiles*/
-	this.x_pixel = null;//this.get_x_prixel();
-	this.y_pixel = null;//this.get_y_pixel();
+	/*Is set initially passed null, need to be assigned before we could place the tiles*/
+	this.leftCoord = leftCoord;
+	this.topCoord = topCoord;
 	this.equals = function(other){
 					if(this.x === other.x && this.y === other.y)
 						return true;
+				};
+	this.setCoord = function(other){
+					this.leftCoord = other.leftCoord;
+					this.topCoord = other.topCoord;
 				};
 }
 
@@ -86,6 +88,11 @@ function Tiles(value,coord){
 					else
 						return false;
 				};
+	this.getTileName = function(){
+					var leftCoord = this.coord.leftCoord;
+					var topCoord = this.coord.topCoord;
+					return "Tile_"+leftCoord.toString()+"_"+topCoord.toString();
+				};
 }
 
 /*This function sets the matrix to a random legal value*/
@@ -96,7 +103,7 @@ function setMatrix(size_of_matrix){
 	for(var i=0;i<size_of_matrix;i++){
 		temp_str = '';
 		for(var j=0;j<size_of_matrix;j++){
-			MATRIX[get1D(i,j)] = new Tiles(RAND_2D_ARRAY[get1D(i,j)],new Coordinates(i,j));
+			MATRIX[get1D(i,j)] = new Tiles(RAND_2D_ARRAY[get1D(i,j)],new Coordinates(i,j,null,null));
 			temp_str = temp_str +' '+ MATRIX[get1D(i,j)].value.toString();
 		}
 		console.log(temp_str);

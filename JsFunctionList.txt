@@ -1,3 +1,9 @@
+<script src="js/DisplayTiles.js"></script>
+DisplayTiles.js
+
+				 function to add a tile to display in the given frame.
+				 function addTileToDisplay(Tile,frameName){
+				 function displayAllTiles(frameName){
 <script src="js/GameAnimations.js"></script>
 GameAnimations.js
 
@@ -9,7 +15,6 @@ GameEngine.js
 
 				 function start(){
 				 functions present in GameParameter.js
-				 functions will be called to display the various cells. The Matrix variable has the tiles* Use Matrix[get1D(i,j)] to get i row and jth
 <script src="js/GameFramesAndPages.js"></script>
 GameFramesAndPages.js
 
@@ -27,6 +32,12 @@ Helper.js
 				 functions*/
 				 function generates the row major of the Given Two D array it helps in converting 1D to 2D
 				 function get1D(x,y){
+<script src="js/InsertTiles.js"></script>
+InsertTiles.js
+
+				 function to calculate the coordinates
+				 function getFreeLocation(x,y){
+				 function positionTiles(size_of_matrix){
 <script src="js/ParameterFunctions.js"></script>
 ParameterFunctions.js
 
@@ -49,15 +60,15 @@ Tiles.js
 				 function (other) {if (this.BLUE === other.BLUE && this.RED === other.RED && this.GREEN === other.GREEN) {return true; } else {return false; } };
 				 function 
 				 function setEnumColor() {
-				 function Coordinates(x,y){
-				 function(){/*some logic to get the x-coordinate in pixels*/};
-				 function(){/*some logic to get the y-coordinate in pixels*/};
+				 function Coordinates(x,y,leftCoord,topCoord){
+				 function(other){
 				 function(other){
 				 function Tiles(value,coord){
 				 function(color){
 				 function(new_value){
 				 function(other){
 				 function(other){
+				 function(){
 				 function sets the matrix to a random legal value*/
 				 function setMatrix(size_of_matrix){
 <script src="js/animation.js"></script>
