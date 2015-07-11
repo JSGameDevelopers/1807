@@ -1,3 +1,6 @@
+<script src="js/AddListener.js"></script>
+AddListener.js
+
 <script src="js/DisplayTiles.js"></script>
 DisplayTiles.js
 
@@ -38,6 +41,10 @@ InsertTiles.js
 				 function to calculate the coordinates
 				 function getFreeLocation(x,y){
 				 function positionTiles(size_of_matrix){
+<script src="js/MouseEventHandler.js"></script>
+MouseEventHandler.js
+
+				 function with all functions that decide events flow
 <script src="js/ParameterFunctions.js"></script>
 ParameterFunctions.js
 

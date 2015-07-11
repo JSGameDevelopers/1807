@@ -4,7 +4,7 @@ function getFreeLocation(x,y){
 	var heightOfGameFrame = Number($("#gameFrame").height());
 	var widthOfGameFrame = Number($("#gameFrame").width());
 	if(x==0 && y==0)
-		console.log("H/W=="+heightOfGameFrame.toString()+widthOfGameFrame.toString())
+		console.log("H/W=="+heightOfGameFrame.toString()+widthOfGameFrame.toString());
 	var leftStart = (widthOfGameFrame - MATRIX_SIZE*TILE_SIZE - (MATRIX_SIZE-1)*TILE_SPACING)/2;
 	var leftCoord = leftStart + y*(TILE_SIZE+TILE_SPACING);
 	var topStart = (heightOfGameFrame - MATRIX_SIZE*TILE_SIZE - (MATRIX_SIZE-1)*TILE_SPACING)/2;

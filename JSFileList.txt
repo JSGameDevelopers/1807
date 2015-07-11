@@ -1,3 +1,4 @@
+AddListener.js
 DisplayTiles.js
 GameAnimations.js
 GameEngine.js
@@ -5,6 +6,7 @@ GameFramesAndPages.js
 GameParameters.js
 Helper.js
 InsertTiles.js
+MouseEventHandler.js
 ParameterFunctions.js
 RandomNumber.js
 Tiles.js
