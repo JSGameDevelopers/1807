@@ -49,7 +49,7 @@ InsertTiles.js
 MouseEventHandler.js
 
 				 function with all functions that decide events flow
-				 function changeTileColorOnClick(tile){
+				 function changeTileColor(tile,colorCode){
 				 function to check if the two clicked tiles are ajdacent to each other
 				 function isAdjacent(tile_1,tile_2){
 				 function to check if the sum of the clicked tiles is <= MAX_NUM_ALLOWED(8). Beyond that is considered invalid addition.
@@ -58,8 +58,6 @@ MouseEventHandler.js
 				 function replaceTile(tile){
 				 function to add the tiles.
 				 function addTiles(){
-				 function restoreOriginalColor(tile){
-				 function flagInvalidAdditionColor(){
 				 function nullifyClickedTiles(){
 				 function to push the two tiles to be changed on stack.
 				 function storeState(){

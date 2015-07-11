@@ -10,7 +10,19 @@ var CLICKED_TILE_2 = null;
 //stack to keep store state of game before any change.
 var stack = [];
 
-function changeTileColorOnClick(tile){
+function changeTileColor(tile,colorCode){
+	var tileName = tile.getTileName();
+	var divId = "div_id"+tileName;
+	var divElement = document.getElementById(divId);
+	if(colorCode !=0){
+		divElement.style.backgroundColor = COLOR_TILES[colorCode];
+	}
+	else{
+		if(tile.value == 1 || tile.value == 8 || tile. value ==0 || tile.value ==7)
+			divElement.style.backgroundColor = COLOR_TILES[0];
+		else
+			divElement.style.backgroundColor = COLOR_TILES[1];
+	}
 }
 
 //function to check if the two clicked tiles are ajdacent to each other
@@ -60,7 +72,7 @@ function replaceTileToDisplay(tile){
 function replaceTile(tile){
 	MATRIX[get1D(tile.coord.x,tile.coord.y)] = tile;
 	replaceTileToDisplay(tile);
-	restoreOriginalColor(tile);
+	changeTileColor(tile,COLOR_VALID_ADDITION);
 }
 //function to add the tiles.
 function addTiles(){
@@ -68,12 +80,6 @@ function addTiles(){
 	replaceTile(CLICKED_TILE_1);
 	replaceTile(CLICKED_TILE_2);
 } 
-
-function restoreOriginalColor(tile){
-}
-
-function flagInvalidAdditionColor(){
-}
 
 //reset the global variables after all mouse click operations performed.
 function nullifyClickedTiles(){
@@ -104,28 +110,31 @@ function mouseClickHandler(tile){
 	console.log(tile.coord.leftCoord.toString()+" , "+tile.coord.topCoord.toString());
 	if(CLICKED_TILE_1 == null && CLICKED_TILE_2 == null){
 		CLICKED_TILE_1 = tile;
-		changeTileColorOnClick(CLICKED_TILE_1);
+		changeTileColor(CLICKED_TILE_1,COLOR_CLICK);
 	}
 	else if(CLICKED_TILE_1 != null && CLICKED_TILE_2 == null){
 		if(isAdjacent(CLICKED_TILE_1,tile)){
 			CLICKED_TILE_2 = tile;
-			changeTileColorOnClick(CLICKED_TILE_2);
+			changeTileColor(CLICKED_TILE_2,COLOR_CLICK);
 			if(isValidAddition()){
 				storeState();
 				addTiles();
+				changeTileColor(CLICKED_TILE_1,COLOR_RESTORE);
+				changeTileColor(CLICKED_TILE_2,COLOR_RESTORE);
 				nullifyClickedTiles();
 			}
 			else{
-				flagInvalidAdditionColor();
-				restoreOriginalColor(CLICKED_TILE_1);
-				restoreOriginalColor(CLICKED_TILE_2);
+				changeTileColor(CLICKED_TILE_1,COLOR_INVALID_ADDITION);
+				changeTileColor(CLICKED_TILE_2,COLOR_INVALID_ADDITION);
+				changeTileColor(CLICKED_TILE_1,COLOR_RESTORE);
+				changeTileColor(CLICKED_TILE_2,COLOR_RESTORE);
 				nullifyClickedTiles();
 			}
 		}
 		else{
+			changeTileColor(CLICKED_TILE_1,COLOR_RESTORE);
 			CLICKED_TILE_1 = tile;
-			changeTileColorOnClick(CLICKED_TILE_1);
-			CLICKED_TILE_2 = null;
+			changeTileColor(CLICKED_TILE_1,COLOR_CLICK);
 		}
 	}
 	return ;

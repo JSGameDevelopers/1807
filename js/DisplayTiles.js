@@ -6,7 +6,11 @@ function addTileToDisplay(Tile,frameName){
 	"<img class='imageTileClass' id="+"'img_id"+tileName+"'"+" src="+Tile.image_location+">"+
 	"</button>"+"</div>"
 	$(tileToBeAppended).appendTo("#"+frameName);
-	$("#"+"div_id"+tileName).css({position: 'absolute', left: Tile.coord.leftCoord, top: Tile.coord.topCoord});
+	var colorCode = 1;
+	if(Tile.value == 1 || Tile.value == 8 || Tile.value == 0 || Tile.value == 7)
+		colorCode = 0;
+	$("#"+"div_id"+tileName).css({position: 'absolute', left: Tile.coord.leftCoord, top: Tile.coord.topCoord, backgroundColor: COLOR_TILES[colorCode]});
+		
 }
 
 //adds all Tiles in MATRIX to display

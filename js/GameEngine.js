@@ -10,6 +10,7 @@
 	setParameters(); //Present in ParameterFunction.js file. It sets the parameter functions present in GameParameter.js
 	setEnumColor(); //To set the Enum Color in file Tiles.js
 	setImages();//to set Images to the array IMAGE_TILES. In the file ParameterFunction.js
+	setDivColorArray(); //to set colors to the array COLOR_TILES. In file ParameterFunction.js
 	setMatrix(MATRIX_SIZE); // sets the Matrix variable with the tiles in the file Tiles.js
 	/*var temp_str = '';
 	for(var i=0;i<MATRIX_SIZE;i++){
