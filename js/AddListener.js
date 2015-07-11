@@ -8,7 +8,7 @@ function addMouseListenerToTile(Tile){
 	var tileId = "img_id"+tileName;
 	var tileElement = document.getElementById(tileId);
 	if(tileElement.addEventListener){ 
-		tileElement.addEventListener('click', mouseClickHandler);
+		tileElement.addEventListener('click', function() { mouseClickHandler(Tile); });
 	}
 	else{
 		tileElement.attachEvent('onclick', mouseClickHandler);

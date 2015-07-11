@@ -3,7 +3,7 @@ function addTileToDisplay(Tile,frameName){
 	var tileName = Tile.getTileName();
 	var tileToBeAppended = "<div class=divTileClass id="+"'div_id"+tileName+"'"+">"+
 	"<button class='buttonTileClass' id="+"'button_id"+tileName+"'"+">"+
-	"<img class='basic' id="+"'img_id"+tileName+"'"+" src="+IMAGE_TILES[Tile.value]+">"+
+	"<img class='basic' id="+"'img_id"+tileName+"'"+" src="+Tile.image_location+">"+
 	"</button>"+"</div>"
 	$(tileToBeAppended).appendTo("#"+frameName);
 	$("#"+"div_id"+tileName).css({position: 'absolute', left: Tile.coord.leftCoord, top: Tile.coord.topCoord});

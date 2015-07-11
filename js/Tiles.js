@@ -74,7 +74,7 @@ function Tiles(value,coord){
 						//It should not work if the sum of values is more than eight
 						if(new_value<=MAX_NUM_ALLOWED){
 							this.value = new_value;
-							this.image_location = imgTiles[value];
+							this.image_location = IMAGE_TILES[value];
 						}
 					};
 	this.sum = function(other){
@@ -93,6 +93,11 @@ function Tiles(value,coord){
 					var topCoord = this.coord.topCoord;
 					return "Tile_"+leftCoord.toString()+"_"+topCoord.toString();
 				};
+}
+/*This pair is used to store on stack as a reference to state of Tiles changed */
+function pairTiles(tile_1,tile_2){
+	this.tile_1 = tile_1;
+	this.tile_2 = tile_2;
 }
 
 /*This function sets the matrix to a random legal value*/

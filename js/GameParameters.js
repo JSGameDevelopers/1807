@@ -23,3 +23,4 @@ var GREEN = null;
 var NO_COLOR = null;
 var GAME_ARENA = 'MainGame.html';
 var TILE_SPACING = 2; //the size is in pixels
+var FRAME_TO_ADD_TILES = "tilePlane"; //frame where all tiles are added.
