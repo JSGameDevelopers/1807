@@ -41,3 +41,11 @@ function setImages(){
 	IMAGE_TILES[7] = img_7;
 	IMAGE_TILES[8] = img_8;
 }
+
+function setDivColorArray(){
+	COLOR_TILES[0] = color_original_1;
+	COLOR_TILES[1] = color_original_2;
+	COLOR_TILES[2] = color_clicked;
+	COLOR_TILES[3] = color_invalid_addition;
+    COLOR_TILES[4] = color_valid_addition;
+}

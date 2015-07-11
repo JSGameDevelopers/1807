@@ -11,7 +11,7 @@ function addMouseListenerToTile(Tile){
 		tileElement.addEventListener('click', function() { mouseClickHandler(Tile); });
 	}
 	else{
-		tileElement.attachEvent('onclick', mouseClickHandler);
+		tileElement.attachEvent('onclick', function() { mouseClickHandler(Tile); });
 	}
 }
 

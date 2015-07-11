@@ -10,14 +10,15 @@ var CLICKED_TILE_2 = null;
 //stack to keep store state of game before any change.
 var stack = [];
 
-changeTileColorOnClick(tile)
+function changeTileColorOnClick(tile){
+}
 
 //function to check if the two clicked tiles are ajdacent to each other
-isAdjacent(tile_1,tile_2)(){
-	var i1 = CLICKED_TILE_1.coord.x;
-	var j1 = CLICKED_TILE_2.coord.y;
-	var	i2 = CLICKED_TILE_2.coord.x;
-	var j2 = CLICKED_TILE_2.coord.y;
+function isAdjacent(tile_1,tile_2){
+	var i1 = tile_1.coord.x;
+	var j1 = tile_1.coord.y;
+	var	i2 = tile_2.coord.x;
+	var j2 = tile_2.coord.y;
 	if(i1==i2 && j1==j2+1)
 		return true;
 	else if(i1==i2 && j1==j2-1)
@@ -32,18 +33,52 @@ isAdjacent(tile_1,tile_2)(){
 		return true;
 	else if(i1==i2+1 && j1==j2-1)
 		return true;
-	else if(i1==i2+! && j1==j2+1)
+	else if(i1==i2+1 && j1==j2+1)
 		return true;
 	else
 		return false;
 }
 
-//function to check if the sum of the clicked tiles is <= 8. Beyond 8 is considered invalid addition.
+
+//function to check if the sum of the clicked tiles is <= MAX_NUM_ALLOWED(8). Beyond that is considered invalid addition.
 function isValidAddition(){
-	if(CLICKED_TILE_1.value + CLICKED_TILE_2.value <= 8)
+	if(CLICKED_TILE_1.value + CLICKED_TILE_2.value <= MAX_NUM_ALLOWED)
 		return true;
 	else 
 		return false;
+}
+
+function replaceTileToDisplay(tile){
+	var tileName = tile.getTileName();
+	var tileId = "img_id"+tileName;
+	var tileElement = document.getElementById(tileId);
+	//tileElement.src = "images/0.png"
+	tileElement.src = IMAGE_TILES[tile.value];
+	//tileElement.src = tile.image_location;
+}
+
+function replaceTile(tile){
+	MATRIX[get1D(tile.coord.x,tile.coord.y)] = tile;
+	replaceTileToDisplay(tile);
+	restoreOriginalColor(tile);
+}
+//function to add the tiles.
+function addTiles(){
+	CLICKED_TILE_1.sum(CLICKED_TILE_2);
+	replaceTile(CLICKED_TILE_1);
+	replaceTile(CLICKED_TILE_2);
+} 
+
+function restoreOriginalColor(tile){
+}
+
+function flagInvalidAdditionColor(){
+}
+
+//reset the global variables after all mouse click operations performed.
+function nullifyClickedTiles(){
+	CLICKED_TILE_1 = null;
+	CLICKED_TILE_2 = null;
 }
 
 //function to push the two tiles to be changed on stack.
@@ -56,30 +91,13 @@ function undo(){
 	var pair_tile = stack.pop();
 	var tile_1 = pair_tile.tile_1;
 	var tile_2 = pair_tile.tile_2;
-	MATRIX[get1D(tile_1.coord.x,tile_1.coord.y)] = tile_1;
-	addTileToDisplay(tile_1,FRAME_TO_ADD_TILES);
-	restoreOriginalColor(CLICKED_TILE_1);
-	MATRIX[get1D(tile_2.coord.x,tile_2.coord.y)] = tile_2;
-	addTileToDisplay(tile_2,FRAME_TO_ADD_TILES);
-	restoreOriginalColor(CLICKED_TILE_2);
+	replaceTile(tile_1);
+	replaceTile(tile_2);
+	nullifyClickedTiles();
 }
-
-//function to add the tiles.
-function addTiles(){
-	CLICKED_TILE_1.sum(CLICKED_TILE_2);
-} 
-
-restoreOriginalColor(tile);
-
-//reset the global variables after all mouse click operations performed.
-function nullifyClickedTiles(){
-		CLICKED_TILE_1 = null;
-		CLICKED_TILE_2 = null;
-}
-
 
 function mouseClickHandler(tile){
-	window.alert("Mouse click detected!!");
+	//window.alert("Mouse click detected!!");
 	console.log("Mouse clicked!");
 	event = window.e || event;
 	console.log(event.toString());
@@ -93,9 +111,8 @@ function mouseClickHandler(tile){
 			CLICKED_TILE_2 = tile;
 			changeTileColorOnClick(CLICKED_TILE_2);
 			if(isValidAddition()){
+				storeState();
 				addTiles();
-				restoreOriginalColor(CLICKED_TILE_1);
-				restoreOriginalColor(CLICKED_TILE_2);
 				nullifyClickedTiles();
 			}
 			else{
@@ -108,6 +125,8 @@ function mouseClickHandler(tile){
 		else{
 			CLICKED_TILE_1 = tile;
 			changeTileColorOnClick(CLICKED_TILE_1);
+			CLICKED_TILE_2 = null;
 		}
-	}	
+	}
+	return ;
 }
