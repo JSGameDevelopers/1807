@@ -1,3 +1,10 @@
+<script src="js/AddListener.js"></script>
+AddListener.js
+
+				 function addMouseListenerToTile(Tile){
+				 function() { mouseClickHandler(Tile); });
+				 function() { mouseClickHandler(Tile); });
+				 function listenerAllTiles(){
 <script src="js/DisplayTiles.js"></script>
 DisplayTiles.js
 
@@ -38,11 +45,30 @@ InsertTiles.js
 				 function to calculate the coordinates
 				 function getFreeLocation(x,y){
 				 function positionTiles(size_of_matrix){
+<script src="js/MouseEventHandler.js"></script>
+MouseEventHandler.js
+
+				 function with all functions that decide events flow
+				 function changeTileColor(tile,colorCode){
+				 function to check if the two clicked tiles are ajdacent to each other
+				 function isAdjacent(tile_1,tile_2){
+				 function to check if the sum of the clicked tiles is <= MAX_NUM_ALLOWED(8). Beyond that is considered invalid addition.
+				 function isValidAddition(){
+				 function replaceTileToDisplay(tile){
+				 function replaceTile(tile){
+				 function to add the tiles.
+				 function addTiles(){
+				 function nullifyClickedTiles(){
+				 function to push the two tiles to be changed on stack.
+				 function storeState(){
+				 function undo(){
+				 function mouseClickHandler(tile){
 <script src="js/ParameterFunctions.js"></script>
 ParameterFunctions.js
 
 				 function setParameters(){
 				 function setImages(){
+				 function setDivColorArray(){
 <script src="js/RandomNumber.js"></script>
 RandomNumber.js
 
@@ -69,6 +95,7 @@ Tiles.js
 				 function(other){
 				 function(other){
 				 function(){
+				 function pairTiles(tile_1,tile_2){
 				 function sets the matrix to a random legal value*/
 				 function setMatrix(size_of_matrix){
 <script src="js/animation.js"></script>

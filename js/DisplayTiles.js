@@ -1,9 +1,16 @@
 //Helper function to add a tile to display in the given frame.
 function addTileToDisplay(Tile,frameName){
 	var tileName = Tile.getTileName();
-	var tileToBeAppended = "<img class='basic' id="+"'img_id"+tileName+"'"+" src="+IMAGE_TILES[Tile.value]+">"
+	var tileToBeAppended = "<div class=divTileClass id="+"'div_id"+tileName+"'"+">"+
+	"<button class='buttonTileClass' id="+"'button_id"+tileName+"'"+">"+
+	"<img class='imageTileClass' id="+"'img_id"+tileName+"'"+" src="+Tile.image_location+">"+
+	"</button>"+"</div>"
 	$(tileToBeAppended).appendTo("#"+frameName);
-	$("#"+"img_id"+tileName).css({position: 'absolute', left: Tile.coord.leftCoord, top: Tile.coord.topCoord});
+	var colorCode = 1;
+	if(Tile.value == 1 || Tile.value == 8 || Tile.value == 0 || Tile.value == 7)
+		colorCode = 0;
+	$("#"+"div_id"+tileName).css({position: 'absolute', left: Tile.coord.leftCoord, top: Tile.coord.topCoord, backgroundColor: COLOR_TILES[colorCode]});
+		
 }
 
 //adds all Tiles in MATRIX to display

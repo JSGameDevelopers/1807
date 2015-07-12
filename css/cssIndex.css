@@ -188,3 +188,16 @@ body{
 #inMatrix{
 	color: red;
 }
+
+.buttonTileClass{
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.divTileClass{
+	background-color: Transparent;
+}
