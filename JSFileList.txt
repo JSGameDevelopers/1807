@@ -12,3 +12,4 @@ RandomNumber.js
 Tiles.js
 animation.js
 jquery-1.11.1.min.js
+snabbt.min.js
