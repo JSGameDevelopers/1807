@@ -25,6 +25,8 @@
 	//$("#tilePlane").after("<div id='inMatrix'></div>");
 	//$("#inMatrix").html(temp_str);
 	$("#tilePlane").append("<div id='playAgain'><button id='playAgainBtn' onclick="+"loadPage('GameFrame.html')"+">Play Again</div>");
+	$("#tilePlane").append("<div id='undo'><button id='undoBtn'>Undo!</div>");
+	undoListener();
 	positionTiles(MATRIX_SIZE); //assigns coordinates to all tiles in MATRIX in file InsertTiles.js
 	displayAllTiles(FRAME_TO_ADD_TILES); //displays all the tiles in MATRIX in file DisplayTiles.js
 	listenerAllTiles(); //adds on click listener to all Tiles in MATRIX

@@ -23,3 +23,13 @@ function listenerAllTiles(){
 		}
 	}
 }
+
+function undoListener(){
+	var undoBtnElement = document.getElementById("undoBtn");
+	if(undoBtnElement.addEventListener){
+		undoBtnElement.addEventListener('click',function() { undo(); });
+	}
+	else{
+		undoBtnElement.attachEvent('onclick',function() { undo(); });
+	}
+}
