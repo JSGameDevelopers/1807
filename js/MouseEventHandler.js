@@ -95,7 +95,7 @@ function storeState(){
 	var tile_2 = CLICKED_TILE_2;
 	var pair_tile = new pairTiles(tile_1,tile_2);
 	stack.push(pair_tile);
-	window.alert("STORE_STATE Tile1 == "+pair_tile.tile_1.value.toString()+" Tile2 ==  "+pair_tile.tile_2.value.toString());
+	//window.alert("STORE_STATE Tile1 == "+pair_tile.tile_1.value.toString()+" Tile2 ==  "+pair_tile.tile_2.value.toString());
 	//window.alert("Coord = "+pair_tile.tile_1.coord.x+" , "+pair_tile.tile_1.coord.y);
 }
 
@@ -104,7 +104,7 @@ function undo(){
 	var pair_tile = stack.pop();
 	var tile_1 = pair_tile.tile_1;
 	var tile_2 = pair_tile.tile_2;
-	window.alert("Tile1 ==  "+tile_1.value.toString()+" Tile2 ==  "+tile_2.value.toString());
+	//window.alert("Tile1 ==  "+tile_1.value.toString()+" Tile2 ==  "+tile_2.value.toString());
 	replaceTile(tile_1);
 	replaceTile(tile_2);
 	nullifyClickedTiles();
