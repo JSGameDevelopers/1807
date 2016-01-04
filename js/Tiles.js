@@ -103,7 +103,8 @@ function pairTiles(tile_1,tile_2){
 /*This function sets the matrix to a random legal value*/
 function setMatrix(size_of_matrix){
 	console.log('Generating random matrix of '+size_of_matrix+' X '+size_of_matrix);
-	getRandomTrueMatrix(size_of_matrix);
+	//getRandomTrueMatrix(size_of_matrix);
+	getRandomSolvedMatix(size_of_matrix);
 	var temp_str = '';
 	for(var i=0;i<size_of_matrix;i++){
 		temp_str = '';

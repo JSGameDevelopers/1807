@@ -76,9 +76,11 @@ function replaceTile(tile){
 }
 //function to add the tiles.
 function addTiles(){
-	CLICKED_TILE_1.sum(CLICKED_TILE_2);
-	replaceTile(CLICKED_TILE_1);
-	replaceTile(CLICKED_TILE_2);
+	var tile_1 = CLICKED_TILE_1;
+	var tile_2 = CLICKED_TILE_2;
+	tile_1.sum(tile_2);
+	replaceTile(tile_1);
+	replaceTile(tile_2);
 } 
 
 //reset the global variables after all mouse click operations performed.
@@ -89,14 +91,20 @@ function nullifyClickedTiles(){
 
 //function to push the two tiles to be changed on stack.
 function storeState(){
-	var pair_tile = pairTiles(CLICKED_TILE_1,CLICKED_TILE_2);
+	var tile_1 = CLICKED_TILE_1;
+	var tile_2 = CLICKED_TILE_2;
+	var pair_tile = new pairTiles(tile_1,tile_2);
 	stack.push(pair_tile);
+	//window.alert("STORE_STATE Tile1 == "+pair_tile.tile_1.value.toString()+" Tile2 ==  "+pair_tile.tile_2.value.toString());
+	//window.alert("Coord = "+pair_tile.tile_1.coord.x+" , "+pair_tile.tile_1.coord.y);
 }
 
 function undo(){
+	//window.alert("UNDO!");
 	var pair_tile = stack.pop();
 	var tile_1 = pair_tile.tile_1;
 	var tile_2 = pair_tile.tile_2;
+	//window.alert("Tile1 ==  "+tile_1.value.toString()+" Tile2 ==  "+tile_2.value.toString());
 	replaceTile(tile_1);
 	replaceTile(tile_2);
 	nullifyClickedTiles();
@@ -110,12 +118,12 @@ function mouseClickHandler(tile){
 	console.log(tile.coord.leftCoord.toString()+" , "+tile.coord.topCoord.toString());
 	if(CLICKED_TILE_1 == null && CLICKED_TILE_2 == null){
 		CLICKED_TILE_1 = tile;
-		changeTileColor(CLICKED_TILE_1,COLOR_CLICK);
+		changeTileColor(tile,COLOR_CLICK);
 	}
 	else if(CLICKED_TILE_1 != null && CLICKED_TILE_2 == null){
 		if(isAdjacent(CLICKED_TILE_1,tile)){
 			CLICKED_TILE_2 = tile;
-			changeTileColor(CLICKED_TILE_2,COLOR_CLICK);
+			changeTileColor(tile,COLOR_CLICK);
 			if(isValidAddition()){
 				storeState();
 				addTiles();

@@ -5,6 +5,9 @@ AddListener.js
 				 function() { mouseClickHandler(Tile); });
 				 function() { mouseClickHandler(Tile); });
 				 function listenerAllTiles(){
+				 function undoListener(){
+				 function() { undo(); });
+				 function() { undo(); });
 <script src="js/DisplayTiles.js"></script>
 DisplayTiles.js
 
@@ -73,8 +76,15 @@ ParameterFunctions.js
 RandomNumber.js
 
 				 functions to generate numbers randomly.
-				 function get_random_num(){
+				 function get_random_num(max_num_allowed){
 				 function getRandomTrueMatrix(size_of_matrix){
+				 function getRandomSolvedMatix(size_of_matrix){
+				 function here
+				 function getRandomPermutationOfDirections(){
+				 function getAdjacentMatchingNumberInMatrix(number,i1,j1,size_of_matrix){
+				 function getNumberInMatrix(number,size_of_matrix){
+				 function split(number,number1,position){
+				 function getUnsolvedMatrix(size_of_matrix){
 <script src="js/Tiles.js"></script>
 Tiles.js
 
